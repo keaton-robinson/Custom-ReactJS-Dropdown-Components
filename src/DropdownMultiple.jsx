@@ -199,6 +199,11 @@ class DropdownMultiple extends Component {
             style={listItem}
             key={item.value}
             onClick={() => this.selectItem(item)}
+            onMouseEnter={() => {
+              if(this.props.onMouseEnter){
+                this.props.onMouseEnter(item)
+              }
+            }}
           >
             {item.label}
             {' '}

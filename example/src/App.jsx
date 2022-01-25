@@ -55,6 +55,8 @@ class App extends Component {
 
   onChange = (item, name) => { console.log(item, name); }
 
+  onMouseEnter = (item, name) => { console.log("Mouse Enter: " + item, name); }
+
   render() {
     const { locations } = this.state;
 
@@ -71,6 +73,7 @@ class App extends Component {
             title="Select locations"
             list={locations}
             onChange={this.onChange}
+            onMouseEnter={this.onMouseEnter}
           />
 
           <Dropdown
@@ -78,6 +81,7 @@ class App extends Component {
             title="Select location"
             list={locations}
             onChange={this.onChange}
+            onMouseEnter={this.onMouseEnter}
           />
         </div>
 
