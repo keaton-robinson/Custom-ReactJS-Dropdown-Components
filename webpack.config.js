@@ -2,7 +2,7 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: ['babel-polyfill', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'build'),
