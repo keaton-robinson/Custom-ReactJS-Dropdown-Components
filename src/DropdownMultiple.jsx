@@ -234,6 +234,7 @@ class DropdownMultiple extends Component {
       arrowUpIcon,
       arrowDownIcon,
       styles,
+      immutable,
     } = this.props;
     const { isListOpen, title } = this.state;
 
@@ -248,26 +249,38 @@ class DropdownMultiple extends Component {
       scrollList,
     } = styles;
 
+    const disabledHeader = {}; Object.assign(disabledHeader, header);
+    const disabledHeaderTitle = {}; Object.assign(disabledHeaderTitle, headerTitle);
+    const disabledHeaderArrowDownIcon = {}; Object.assign(disabledHeaderArrowDownIcon, headerArrowDownIcon);   
+    disabledHeader.backgroundColor = "lightgray";
+    disabledHeaderTitle.color = "gray";
+    disabledHeaderArrowDownIcon.color = "gray";
+
     return (
-      <div
+      <span
         className={`dd-wrapper ${id}`}
         style={wrapper}
       >
         <button
           type="button"
           className={`dd-header ${id}`}
-          style={header}
-          onClick={this.toggleList}
+          style={immutable ? disabledHeader : header}
+          onClick={() => {if(!immutable) { this.toggleList()}}}
+          onMouseEnter={() => {
+            if(this.props.onMouseEnter && this.state.selectedItem){
+              this.props.onMouseEnter(this.state.selectedItem);
+            }
+          }}
         >
           <div
             className={`dd-header-title ${id}`}
-            style={headerTitle}
+            style={immutable ? disabledHeaderTitle : headerTitle}
           >
             {title}
           </div>
           {isListOpen
             ? <span style={headerArrowUpIcon}>{arrowUpIcon || <ArrowUp />}</span>
-            : <span style={headerArrowDownIcon}>{arrowDownIcon || <ArrowDown />}</span>}
+            : <span style={immutable ? disabledHeaderArrowDownIcon : headerArrowDownIcon}>{arrowDownIcon || <ArrowDown />}</span>}
         </button>
         {isListOpen && (
           <div
@@ -295,7 +308,7 @@ class DropdownMultiple extends Component {
             </div>
           </div>
         )}
-      </div>
+      </span>
     );
   }
 }

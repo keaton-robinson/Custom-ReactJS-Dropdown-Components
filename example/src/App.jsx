@@ -76,12 +76,33 @@ class App extends Component {
             onMouseEnter={this.onMouseEnter}
           />
 
+<DropdownMultiple
+            name="locations"
+            titleSingular="Location"
+            title="Select locations"
+            list={locations}
+            onChange={this.onChange}
+            onMouseEnter={this.onMouseEnter}
+          />
+
           <Dropdown
             name="location"
             title="Select location"
             list={locations}
             onChange={this.onChange}
             onMouseEnter={this.onMouseEnter}
+            select={{value: 'izmir'}}
+            styles={{ headerTitle: { color:"red"}}}
+          />
+
+<Dropdown
+            name="location"
+            title="Select location"
+            list={locations}
+            onChange={this.onChange}
+            onMouseEnter={this.onMouseEnter}
+            select={{value: 'izmir'}}
+            styles={{ headerTitle: { color:"red"}}}
           />
         </div>
 
