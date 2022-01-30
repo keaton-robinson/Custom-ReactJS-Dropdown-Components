@@ -1,5 +1,5 @@
 {
-  "name": "XWing-reactjs-dropdown-component",
+  "name": "@keatonr06/reactjs-dropdown-component",
   "version": "0.1.0",
   "description": "Forked dropdown components from reactjs-dropdown-component package",
   "main": "build/index.js",
