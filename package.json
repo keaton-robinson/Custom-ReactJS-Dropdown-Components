@@ -1,14 +1,14 @@
 {
-  "name": "reactjs-dropdown-component",
-  "version": "1.2.0",
-  "description": "Single and multi select dropwdown menu components",
+  "name": "XWing-reactjs-dropdown-component",
+  "version": "0.1.0",
+  "description": "Forked dropdown components from reactjs-dropdown-component package",
   "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "start": "webpack --watch",
     "build": "webpack"
   },
-  "author": "Dogacan Bilgili",
+  "author": "Keaton Robinson",
   "keywords": [
     "react",
     "dropdown",
@@ -16,12 +16,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dbilgili/Custom-ReactJS-Dropdown-Components.git"
+    "url": "https://github.com/keaton-robinson/Custom-ReactJS-Dropdown-Components.git"
   },
   "license": "MIT",
   "peerDependencies": {
     "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
