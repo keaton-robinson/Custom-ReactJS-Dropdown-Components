@@ -212,8 +212,12 @@ class Dropdown extends Component {
           style={immutable ? disabledHeader : header}
           onClick={() => {if(!immutable) { this.toggleList()}}}
           onMouseEnter={() => {
-            if(this.props.onMouseEnter && this.state.selectedItem){
-              this.props.onMouseEnter(this.state.selectedItem);
+            if(this.state.selectedItem){
+              if(this.props.onHeaderMouseEnter){
+                this.props.onHeaderMouseEnter(this.state.selectedItem);
+              } else if(this.props.onMouseEnter){
+                this.props.onMouseEnter(this.state.selectedItem);
+              }
             }
           }}
         >
