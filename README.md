@@ -1,3 +1,3 @@
 This is my forked version of https://www.npmjs.com/package/reactjs-dropdown-component
 
-I needed it to allow mouseEnter events and "disabled" dropdowns. 
+I needed to make my own fork so that I could allow mouseEnter events and "disabled" dropdowns. 
