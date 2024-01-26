@@ -3,10 +3,10 @@
   "homepage": "https://dbilgili.github.io/Custom-ReactJS-Dropdown-Components",
   "version": "1.0.0",
   "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-scripts": "1.1.5",
-    "reactjs-dropdown-component": "^1.1.9"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "@keatonr06/reactjs-dropdown-component": "0.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

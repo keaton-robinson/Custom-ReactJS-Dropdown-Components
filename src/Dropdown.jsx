@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ArrowDown from './assets/arrowDown.svg';
@@ -24,15 +23,22 @@ class Dropdown extends Component {
 
   componentDidMount() {
     const { select } = this.props;
-
+  
     if (select) {
       this.selectSingleItem(select);
     }
   }
-
-  componentDidUpdate() {
+  
+  componentDidUpdate(prevProps) {
+    const { select } = this.props;
     const { isListOpen } = this.state;
-
+  
+    // Handling the change in selection based on the 'select' prop
+    if (select && (!prevProps.select || select.value !== prevProps.select.value)) {
+      this.selectSingleItem(select);
+    }
+  
+    // Existing functionality for handling click events
     setTimeout(() => {
       if (isListOpen) {
         window.addEventListener('click', this.close);
@@ -41,6 +47,7 @@ class Dropdown extends Component {
       }
     }, 0);
   }
+  
 
   componentWillUnmount() {
     window.removeEventListener('click', this.close);
@@ -81,10 +88,16 @@ class Dropdown extends Component {
   }
 
   selectItem = (item) => {
-    const { label, value } = item;
     const { list, selectedItem } = this.state;
-    const { name, onChange } = this.props;
-
+    const { name, onChange, title } = this.props;
+    if(!item){
+      return this.setState({
+        title: title,
+        isListOpen: false,
+        selectedItem: null,
+      }, () => selectedItem?.value !== value && onChange(item, name));
+    }
+    const { label, value } = item;
     let foundItem;
 
     if (!label) {

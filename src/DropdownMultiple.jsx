@@ -1,6 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import pluralize from 'pluralize';
@@ -9,6 +6,7 @@ import ArrowUp from './assets/arrowUp.svg';
 import Check from './assets/check.svg';
 import './styles/global.css';
 
+// TODO: match functionality for updating selected item from regular dropdown
 class DropdownMultiple extends Component {
   constructor(props) {
     super(props);

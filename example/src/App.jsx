@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DropdownMultiple, Dropdown } from 'reactjs-dropdown-component';
+import { DropdownMultiple, Dropdown } from '@keatonr06/reactjs-dropdown-component';
 
 class App extends Component {
   constructor() {
@@ -20,7 +20,7 @@ class App extends Component {
         },
         {
           label: 'California',
-          value: 'colifornia',
+          value: 'california',
         },
         {
           label: 'Izmir',
@@ -31,6 +31,7 @@ class App extends Component {
           value: 'oslo',
         },
       ],
+     
     };
   }
 
@@ -53,7 +54,9 @@ class App extends Component {
     window.addEventListener('keydown', this.tabKeyPressed);
   }
 
-  onChange = (item, name) => { console.log(item, name); }
+  onChange = (item, name) => { console.log(item, name); 
+    this.setState({ selectedValue: item?.value })
+  }
 
   onMouseEnter = (item, name) => { console.log("Mouse Enter: " + item, name); }
 
@@ -64,19 +67,15 @@ class App extends Component {
       <div className="App">
         <p>Dropdown menu examples</p>
 
+        <h3>selected value: {this.state.selectedValue}</h3>
+        <button onClick={() => this.setState({ selectedValue: "california" }) } >Change to california</button>
+        <button onClick={() => this.setState({ selectedValue: "izmir" }) } >Change to izmir</button>
+        <button onClick={() => this.setState({ selectedValue: null }) } >Change to null</button>
+
         <h3>Regular</h3>
 
         <div className="wrapper">
           <DropdownMultiple
-            name="locations"
-            titleSingular="Location"
-            title="Select locations"
-            list={locations}
-            onChange={this.onChange}
-            onMouseEnter={this.onMouseEnter}
-          />
-
-<DropdownMultiple
             name="locations"
             titleSingular="Location"
             title="Select locations"
@@ -91,17 +90,7 @@ class App extends Component {
             list={locations}
             onChange={this.onChange}
             onMouseEnter={this.onMouseEnter}
-            select={{value: 'izmir'}}
-            styles={{ headerTitle: { color:"red"}}}
-          />
-
-<Dropdown
-            name="location"
-            title="Select location"
-            list={locations}
-            onChange={this.onChange}
-            onMouseEnter={this.onMouseEnter}
-            select={{value: 'izmir'}}
+            select={{value: this.state.selectedValue}}
             styles={{ headerTitle: { color:"red"}}}
           />
         </div>
