@@ -34,7 +34,7 @@ class Dropdown extends Component {
     const { isListOpen } = this.state;
   
     // Handling the change in selection based on the 'select' prop
-    if (select && (!prevProps.select || select.value !== prevProps.select.value)) {
+    if (select?.value != prevProps.select?.value) { // I am not a huge fan of the prop requiring an object with a "value" key..but leaving it alone for now
       this.selectSingleItem(select);
     }
   
