@@ -34,7 +34,12 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [autoprefixer()],
+              postcssOptions: {
+                plugins: [
+                  require('autoprefixer')(),
+                  // you can add more PostCSS plugins here if needed
+                ],
+              },
             },
           },
           // 'resolve-url-loader' can be used if you have relative URLs in your CSS

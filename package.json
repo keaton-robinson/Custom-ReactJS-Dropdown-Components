@@ -5,8 +5,8 @@
   "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "start": "NODE_OPTIONS=--openssl-legacy-provider webpack --watch",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack"
+    "start": "webpack --watch",
+    "build": "webpack"
   },
   "author": "Keaton Robinson",
   "keywords": [
@@ -20,35 +20,35 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "react": "^15.0.0 || ^16.0.0 || ^17.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
-    "@svgr/webpack": "^4.3.3",
-    "autoprefixer": "^9.0.0",
+    "@svgr/webpack": "^8.1.0",
+    "autoprefixer": "^10.4.17",
     "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^9.1.3",
     "babel-polyfill": "^6.26.0",
-    "css-loader": "^3.2.0",
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb": "^18.1.0",
+    "css-loader": "^6.9.1",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
-    "postcss-loader": "^3.0.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "resolve-url-loader": "^3.1.1",
-    "style-loader": "^0.23.1",
-    "stylelint": "^13.3.3",
-    "stylelint-config-recommended": "^3.0.0",
-    "stylelint-order": "^4.0.0",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "postcss-loader": "^8.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "resolve-url-loader": "^5.0.0",
+    "style-loader": "^3.3.4",
+    "stylelint": "^16.2.0",
+    "stylelint-config-recommended": "^14.0.0",
+    "stylelint-order": "^6.0.4",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "pluralize": "^8.0.0",
