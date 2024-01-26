@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ArrowDown from './assets/arrowDown.svg';
 import ArrowUp from './assets/arrowUp.svg';
 import Check from './assets/check.svg';
-import './styles/global.sass';
+import './styles/global.css';
 
 class Dropdown extends Component {
   constructor(props) {

@@ -7,7 +7,7 @@ import pluralize from 'pluralize';
 import ArrowDown from './assets/arrowDown.svg';
 import ArrowUp from './assets/arrowUp.svg';
 import Check from './assets/check.svg';
-import './styles/global.sass';
+import './styles/global.css';
 
 class DropdownMultiple extends Component {
   constructor(props) {

@@ -26,7 +26,8 @@ module.exports = {
         },
       },
       {
-        test: /\.sass$/,
+        // Updated this rule to match .css files
+        test: /\.css$/,
         use: [
           'style-loader',
           'css-loader',
@@ -36,8 +37,8 @@ module.exports = {
               plugins: () => [autoprefixer()],
             },
           },
+          // 'resolve-url-loader' can be used if you have relative URLs in your CSS
           'resolve-url-loader',
-          'sass-loader',
         ],
       },
       {
